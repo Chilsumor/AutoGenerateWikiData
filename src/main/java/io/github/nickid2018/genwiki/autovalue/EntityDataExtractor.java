@@ -98,7 +98,7 @@ public class EntityDataExtractor {
 
             EFFECT_CATEGORY.put(effectID, effect.getCategory().name());
             EFFECT_COLOR.put(effectID, effect.getColor());
-            EFFECT_INSTANTANEOUS.put(effectID, effect.isInstantenous());
+            EFFECT_INSTANTANEOUS.put(effectID, effect.isInstantaneous());
 
             EFFECT_CANNOT_AFFECT.put(effectID);
             for (Map.Entry<String, LivingEntity> entry : livingEntityMap.entrySet()) {

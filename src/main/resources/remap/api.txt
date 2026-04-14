@@ -240,7 +240,7 @@
     @class MobEffect
         @method getCategory() -.MobEffectCategory
         @method getColor() I
-        @method isInstantenous() Z
+        @method isInstantaneous() Z
         @method createModifiers(I,java.util.function.BiConsumer) V (ILjava/util/function/BiConsumer<Lnet/minecraft/core/Holder<Lnet/minecraft/world/entity/ai/attributes/Attribute;>;Lnet/minecraft/world/entity/ai/attributes/AttributeModifier;>;)V
     @enum MobEffectCategory
     @class MobEffectInstance impl java.lang.Comparable Ljava/lang/Object;Ljava/lang/Comparable<Lnet/minecraft/world/effect/MobEffectInstance;>;
