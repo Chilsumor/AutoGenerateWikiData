@@ -183,7 +183,12 @@ public class ChunkStatisticsAnalyzer {
                 for (BlockPos blockPos : blockPosList) {
                     BlockState blockState = chunk.getBlockState(blockPos);
                     Block block = blockState.getBlock();
-                    blockCounter.increase(block, y);
+                    blockCounter.increase(
+                        block,
+                        y,
+                        chunk.getPos().getMinBlockX() + blockPos.getX(),
+                        chunk.getPos().getMinBlockZ() + blockPos.getZ()
+                    );
                 }
             }
 
@@ -191,7 +196,11 @@ public class ChunkStatisticsAnalyzer {
                 for (int x = 0; x < 4; x++)
                     for (int z = 0; z < 4; z++) {
                         Holder<Biome> holder = chunk.getNoiseBiome(x, y, z);
-                        biomeCounter.increase(holder, y);
+                        biomeCounter.increase(
+                            holder, y,
+                            (chunk.getPos().getMinBlockX() >> 2) + x,
+                            (chunk.getPos().getMinBlockZ() >> 2) + z
+                        );
                     }
 
             count++;

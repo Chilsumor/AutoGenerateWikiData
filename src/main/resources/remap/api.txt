@@ -106,7 +106,7 @@
         @const ENCHANTMENT net.minecraft.resources.ResourceKey Lnet/minecraft/resources/ResourceKey<Lnet/minecraft/core/Registry<Lnet/minecraft/world/item/enchantment/Enchantment;>;>;
 
 @package net.minecraft.core
-    @class BlockPos
+    @class BlockPos extends -.Vec3i
         @const ZERO -.BlockPos
         @method <init>(I,I,I) V
     @interface DefaultedRegistry impl -.Registry <T:Ljava/lang/Object;>Ljava/lang/Object;Lnet/minecraft/core/Registry<TT;>;
@@ -158,6 +158,11 @@
         @component value -.Registry Lnet/minecraft/core/Registry<TT;>;
     @interface TypedInstance <T:Ljava/lang/Object;>Ljava/lang/Object;
         @method is(net.minecraft.tags.TagKey) Z (Lnet/minecraft/tags/TagKey<TT;>;)Z
+    @class Vec3i
+        @method <init>(I,I,I) V
+        @method getX() I
+        @method getY() I
+        @method getZ() I
 
 @package net.minecraft.network.syncher
     @record EntityDataAccessor <T:Ljava/lang/Object;>Ljava/lang/Record;
@@ -320,6 +325,13 @@
         @method getItem() -.Item
         @method getComponents() net.minecraft.core.component.DataComponentMap
 
+@package net.minecraft.world.level
+    @record ChunkPos
+        @component x I
+        @component z I
+        @method getMinBlockX() I
+        @method getMinBlockZ() I
+
 @package net.minecraft.world.level.biome
     @class Biome
 
@@ -402,6 +414,7 @@
 @package net.minecraft.world.level.chunk
     @abstract ChunkAccess impl net.minecraft.world.level.BlockGetter
         @method getNoiseBiome(I,I,I) net.minecraft.core.Holder (III)Lnet/minecraft/core/Holder<Lnet/minecraft/world/level/biome/Biome;>;
+        @method getPos() net.minecraft.world.level.ChunkPos
 
 @package net.minecraft.world.level.gamerules
     @class GameRule <T:Ljava/lang/Object;>Ljava/lang/Object;
