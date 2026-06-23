@@ -141,7 +141,7 @@ public class BlockDataExtractor {
                 }
 
                 OCCLUSION_SHAPE_VALUES.put(blockID + stateName, state.canOcclude(), occlusionMap);
-                LIQUID_COMPUTATION_VALUES.put(blockID + stateName, state.blocksMotion(), faceSturdySet);
+                LIQUID_COMPUTATION_VALUES.put(blockID + stateName, state.legacySolid, faceSturdySet);
             }
 
             makeStatePredicateData(
